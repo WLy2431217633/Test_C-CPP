@@ -16,30 +16,43 @@ void Point()
 }
 
 // we can think it is a Nickname
-void Reference()
+void Reference(double d)
 {
     // declaration some simple variable
     int i;
-    double d;
+
 
     // declaration some reference variable
     int &ii = i;
     double &dd = d;
 
     i = 5;
-    cout << "Value of i = " << i << endl;
-    cout << "Value of i reference = " << ii << endl;
+    cout << "Reference Value of i = " << i << endl;
+    cout << "Reference Value of i reference = " << ii << endl;
 
     d = 0.5;
-    cout << "Value of d = " << d << endl;
-    cout << "Value of d reference = " << dd << endl;
+    cout << "Reference Value of d = " << d << endl;
+    cout << "Reference Value of d reference = " << dd << endl;
 
+}
+
+void Reference2(double &dd)
+{
+    double d = 0.5;
+    dd = d;
+    cout << "Reference2 Value of d = " << d << endl;
+    cout << "Reference2 Value of d reference = " << dd << endl;
 }
 
 int main()
 {
+    double dd;
     Point();
-    Reference();
+
+    Reference2(dd);
+    cout << "main Value of d reference = " << dd << endl;
+    Reference(dd);
+    cout << "main Value of d reference = " << dd << endl;
     system("pause");
     return 0;
 }
